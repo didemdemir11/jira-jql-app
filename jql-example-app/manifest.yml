@@ -1,0 +1,24 @@
+modules:
+  jira:adminPage:
+    - key: get-started-page
+      title: "Get Started"
+      resource: get-started-resource
+      render: native
+      useAsGetStarted: true
+
+resources:
+  - key: get-started-resource
+    path: static/get-started/build
+    tunnel:
+      port: 3000
+
+app:
+  id: ari:cloud:ecosystem::app/971aa047-70b9-4a9c-94c7-c42742ed931e
+  runtime:
+    name: nodejs22.x
+
+permissions:
+  scopes:
+    - storage:app
+    - read:jira-work
+    - read:jira-user
